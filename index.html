@@ -19,13 +19,16 @@
 			text-decoration: none;
 			border-bottom: none;
 		}
-
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
 		/* Media query for mobile */
-		@media (max-width: 1023px) {
+		@media (max-width: 767px) {
 
 			/* Mobile-specific styles */
 			#about_p {
 				margin: 10%;
+				align-items: center;
 			}
 			#about_p h2{
 				margin-top: 20%;
@@ -37,14 +40,38 @@
     			z-index: 1000;
 			}
 		}
-
+		@media (min-width: 768px) and (max-width: 1023px) {
+			#about_p {
+				margin: 10%;
+				align-items: center;
+			}
+			#about_p h2{
+				margin-top: 20%;
+			}
+			.navbar.fixed-top{
+				position: fixed;
+    			top: 0;
+    			width: 100%;
+    			z-index: 1000;
+			}
+			/* CSS styles for tablets */
+			/* Add your styles here */
+			.card-text {
+				white-space: nowrap; /* Prevent text from wrapping */
+				overflow: hidden; /* Hide any overflowing content */
+				text-overflow: ellipsis; /* Display "..." for truncated text */
+				max-width: 100%; /* Limit the width of the container */
+			  }
+			  
+			  .card-text:hover {
+				overflow: visible; /* Show overflowing content on hover */
+				white-space: normal; /* Allow text to wrap and show full content */
+			  }
+		  }
 		/* Media query for desktop */
 		@media (min-width: 1024px) {
 
 			/* Desktop-specific styles */
-			body {
-				font-family: 'Roboto', sans-serif;
-			}
 
 			.sticky-top {
 				position: fixed;
@@ -60,6 +87,21 @@
 			#about_p img{
 				margin: 10%;
 			}
+			#projects img{
+				width: auto;
+				height: 350px;
+			}
+			.card-text {
+				white-space: nowrap; /* Prevent text from wrapping */
+				overflow: hidden; /* Hide any overflowing content */
+				text-overflow: ellipsis; /* Display "..." for truncated text */
+				max-width: 100%; /* Limit the width of the container */
+			  }
+			  
+			  .card-text:hover {
+				overflow: visible; /* Show overflowing content on hover */
+				white-space: normal; /* Allow text to wrap and show full content */
+			  }
 		}
 	</style>
 </head>
