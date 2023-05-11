@@ -1,91 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>portfolio</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <style>
-	    body {
-	        font-family: 'Roboto', sans-serif;
-	    }
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+		.sticky-top {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+		}
 	</style>
 </head>
+
 <body>
-	<div>
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		  <div class="container-fluid">
-		    <a class="navbar-brand" href="index.html" style="margin-left: 10%;">Manikantam</a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="index.html">Projects</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">Link</a>
-		        </li>
-		        <li class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		            Dropdown
-		          </a>
-		          <ul class="dropdown-menu">
-		            <li><a class="dropdown-item" href="#">Action</a></li>
-		            <li><a class="dropdown-item" href="#">Another action</a></li>
-		            <li><hr class="dropdown-divider"></li>
-		            <li><a class="dropdown-item" href="#">Something else here</a></li>
-		          </ul>
-		        </li>
-		        <!-- <li class="nav-item">
+	<div id="about">
+		<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#about" style="margin-left: 10%;">Manikantam</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#projects">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">resume</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">contact</a>
+						</li>
+						<!-- <li class="nav-item">
 		          <a class="nav-link disabled">Disabled</a>
 		        </li> -->
-		      </ul>
-		      <form class="d-flex" role="search">
-		        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-		        <button class="btn btn-outline-success" type="submit" style="margin-right: 30%;">Search</button>
-		      </form>
-		    </div>
-		  </div>
+					</ul>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit" style="margin-right: 30%;">Search</button>
+					</form>
+				</div>
+			</div>
 		</nav>
 	</div>
 	<div style="display: flex; align-items: center;">
-    <div style="margin:10%">
-        <h2>I am</h2>
-        <p>
-            Sadam Manikantam, a passionate third-year student at Vardhaman College of Engineering. My primary interests lie in exploring cutting-edge technologies, particularly artificial intelligence, machine learning, and deep learning. With the goal of becoming a data scientist and data analyst, I have built several successful machine learning and deep learning models. My curiosity drives me to stay updated with future technologies, ensuring I remain at the forefront of the field.
-        </p>
-        <p>
-        	Aside from my academic pursuits, I actively explore emerging technologies to remain at the forefront of innovation. I believe continuous learning is vital to excel in the rapidly evolving tech landscape.
-        </p>
-    </div>
-    <img src="dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo" style="margin: 10%;border-radius: 50px;border: none;">
-</div>
+		<div style="margin:10%">
+			<h2>I am</h2>
+			<p>
+				Sadam Manikantam, a passionate third-year student at Vardhaman College of Engineering. My primary
+				interests lie in exploring cutting-edge technologies, particularly artificial intelligence, machine
+				learning, and deep learning. With the goal of becoming a data scientist and data analyst, I have built
+				several successful machine learning and deep learning models. My curiosity drives me to stay updated
+				with future technologies, ensuring I remain at the forefront of the field.
+			</p>
+			<p>
+				Aside from my academic pursuits, I actively explore emerging technologies to remain at the forefront of
+				innovation. I believe continuous learning is vital to excel in the rapidly evolving tech landscape.
+			</p>
+		</div>
+		<img src="dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo"
+			style="margin: 10%;border-radius: 50px;border: none;">
+	</div>
+	<div style="margin: 10%;">
+		<h2 id="projects">Projects</h2>
+		<div class="row row-cols-1 row-cols-md-3 g-4" style="margin:auto;">
+			<div class="col">
+				<div class="card">
+					<img src="hand_writen_recg.jpg" class="card-img-top" alt="hand written recognition">
+					<div class="card-body">
+						<h5 class="card-title">Hand Writen RecogniIon</h5>
+						<p class="card-text">I used the language Python and it will recognise the numbers and characters that we wri=en on the canvas frame and in this project i didn't used any deep learning methods and i used only sklearn package and tkinter and Image packages from the python.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<img src="dashboard.jpg" class="card-img-top" alt="dashboard image">
+					<div class="card-body">
+						<h5 class="card-title">Student Improvement Dashboard</h5>
+						<p class="card-text">Developed a Student Success Dashboard using Django framework, which analyzes academic performance of students and provides insights into their strengths and weaknesses. The pla_orm suggests personalized to-do lists for improvement in weak subjects, facilitates pairing between strong and weak students, and displays results in a comprehensive dashboard. The project aims to enhance student performance and help them achieve academic success.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<img src="flappy bird.jpg" class="card-img-top" alt="flappy bird">
+					<div class="card-body">
+						<h5 class="card-title">Flappy Bird Game</h5>
+						<p class="card-text">
+							I have built a Flappy Bird game application using the Unity platform. This classic game involves guiding a bird through a series of pipes by tapping the screen, aiming to achieve the highest score without colliding with obstacles or the ground. The game runs smoothly on various systems, thanks to Unity's compatibility. With visually appealing graphics and engaging sound effects, players are immersed in an exciting gaming experience.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<img src="wifi car.jpg" class="card-img-top" alt="Wifi Car">
+					<div class="card-body">
+						<h5 class="card-title">Wifi Car</h5>
+						<p class="card-text">I have successfully developed a WiFi car that can be controlled using any mobile device through the Blink app. This innovative project utilizes the Blink app as an intermediary between the internet and the car, allowing for seamless communication. By employing a NodeMCU, the car's wheels can be controlled by receiving signals transmitted from the Blink app. This connectivity is established through an API, enabling real-time control and operation of the car from a mobile device. The integration of the Blink app, NodeMCU, and API has resulted in a versatile and efficient WiFi car that offers an immersive and user-friendly experience.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
