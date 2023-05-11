@@ -11,6 +11,9 @@
 	<style>
 		/* Default styles for both mobile and desktop */
 		/* Shared styles */
+		#projects h2{
+			margin-top: 20%;
+		}
 		a {
 			color: aliceblue;
 			text-decoration: none;
@@ -18,16 +21,25 @@
 		}
 
 		/* Media query for mobile */
-		@media (max-width: 767px) {
+		@media (max-width: 1023px) {
 
 			/* Mobile-specific styles */
 			#about_p {
 				margin: 10%;
 			}
+			#about_p h2{
+				margin-top: 20%;
+			}
+			.navbar.fixed-top{
+				position: fixed;
+    			top: 0;
+    			width: 100%;
+    			z-index: 1000;
+			}
 		}
 
 		/* Media query for desktop */
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 
 			/* Desktop-specific styles */
 			body {
@@ -54,7 +66,7 @@
 
 <body>
 	<div id="about">
-		<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#about" style="margin-left: 10%;">Manikantam</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -103,7 +115,7 @@
 		<img src="dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo"
 			style="border-radius: 50px;border: none;">
 	</div>
-	<div style="margin: 10%;">
+	<div id="projects" style="margin: 10%;">
 		<h2 id="projects">Projects</h2>
 		<div class="row row-cols-1 row-cols-md-3 g-4" style="margin:auto;">
 			<div class="col">
