@@ -18,6 +18,10 @@
 			width: 100%;
 			z-index: 1000;
 		}
+		a {
+			text-decoration: none;
+			border-bottom: none;
+		}
 	</style>
 </head>
 
@@ -40,18 +44,15 @@
 							<a class="nav-link" href="#">Link</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">resume</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">contact</a>
+							<a class="nav-link" href="#contact">contact</a>
 						</li>
 						<!-- <li class="nav-item">
 		          <a class="nav-link disabled">Disabled</a>
 		        </li> -->
 					</ul>
 					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit" style="margin-right: 30%;">Search</button>
+						<input class="form-control me-2" id="searchbox" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+						<button class="btn btn-outline-success" type="submit" id="searchButton" style="margin-right: 20%;">Search</button>
 					</form>
 				</div>
 			</div>
@@ -117,6 +118,44 @@
 			</div>
 		</div>
 	</div>
+	<!-- <div style="display: flex; align-items: center;margin:10%;">
+		<h2 id="resume" style="margin-right: 10%;">My Resume</h2>
+		<button type="button" class="btn btn-primary">
+			<a download="Resume" style="color:aliceblue;" href="resume.pdf">Download</a>
+		</button>
+	</div> -->
+	<!-- contacts -->
+	<div id="contact" style="margin: 10%;">
+		<h2 style="margin-bottom: 2%;">Contact</h2>
+		<div class="contact-links">
+			<a href="mailto:sadammanikantam@gmail.com">
+				<img src="email.png" alt="Email" width="35" height="35">
+			</a>
+			<a href="https://github.com/smanikantam">
+				<img src="github.png" alt="GitHub" width="35" height="35">
+			</a>
+			<a href="https://www.linkedin.com/in/smanikantam/">
+				<img src="linkedin.png" alt="linkedin" width="35" height="35">
+			</a>
+			<!-- Add more contact links with images as desired -->
+		</div>
+	</div>
+	<script>
+		document.getElementById("searchButton").addEventListener("click", function() {
+			var searchTerm = document.getElementById("searchbox").value;
+			if (searchTerm === "/resume") {
+				// Replace "resume_file.pdf" with the actual filename and extension of your resume file
+				var downloadLink = document.createElement("a");
+				downloadLink.href = "resume.pdf";
+				downloadLink.download = "resume.pdf";
+				downloadLink.click();
+			} else {
+				alert("Invalid search term");
+			}
+		});
+	</script>
+	
+	
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
