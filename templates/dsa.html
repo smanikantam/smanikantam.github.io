@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>dsa</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/dsa.css'>
+    <script src='../scripts/dsa.js'></script>
+    
+</head>
+
+<body>
+    <div class="images" style="display: flex;">
+        <img src="../dsa/dsa.jpg" alt="dsa-pic" width="45%" height="45%" style="align-items:center;margin:auto;">
+        <img src="../dsa/timecomplexity.jpg" alt="timecomplexity" width="40%" height="40%"
+            style="align-items:center;margin:10%;">
+        <img src="../dsa/classification_dsa.jpg" alt="timecomplexity" width="40%" height="40%"
+        style="align-items:center;margin:10%;">
+    </div>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">JavaScript</span>
+            <!-- <button class="edit-button" onclick="editCode()">
+                <img src="logos/edit.png" width="30" height="30" alt="edit">
+            </button> -->
+            <button class="copy-button" onclick="copyCode()">
+                <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+            </button>
+        </div>
+        <pre class="code-content"><code id="code" contenteditable>
+          gcghhcgchjg
+        </code></pre>
+    </div>
+
+    <!-- <script>
+        function editCode() {
+            // Get the current content from the website
+            var currentContent = document.getElementById('code').innerHTML;
+
+            // Prompt the user to enter the new content
+            var newContent = prompt('Enter the new content:', currentContent);
+
+            // Update the content on the website
+            document.getElementById('code').innerHTML = newContent;
+        }
+
+        function copyCode() {
+            const codeElement = document.getElementById('code');
+            const code = codeElement.textContent;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Code copied to clipboard!');
+        }
+
+    </script> -->
+</body>
+
+</html>

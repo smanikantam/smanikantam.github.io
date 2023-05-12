@@ -1,0 +1,82 @@
+body {
+    background-color: gray;
+}
+.images{
+    width: 90%;
+    max-height: 700px;;
+    overflow-x: auto;
+
+}
+
+
+.code-snippet {
+    background-color: black;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4;
+    margin: 10%;
+}
+
+.code-snippet .file-type {
+    padding-left: 1%;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    background-color: #343541;
+    border-radius: 10px;
+}
+
+.file-type {
+    color: #cccccc;
+}
+
+.copy-button {
+    border: none;
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit-button {
+    border: none;
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.code-content {
+    overflow-x: auto;
+}
+
+#code-content::-webkit-focus-ring-color {
+    /* Chrome, Safari, Edge */
+    outline-color: none;
+}
+
+
+
+/* Language-specific code highlighting styles */
+code {
+    color: #ffffff;
+}
+
+/* Add more specific styles for different programming languages */
+code.js {
+    color: #f7df1e;
+}
+
+code.py {
+    color: #4b8bbe;
+}
+
+code.html {
+    color: #e34c26;
+}
+
+/* Add more language classes as needed */
