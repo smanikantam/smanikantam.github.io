@@ -151,7 +151,7 @@
 				innovation. I believe continuous learning is vital to excel in the rapidly evolving tech landscape.
 			</p>
 		</div>
-		<img src="dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo"
+		<img src="profilephoto/dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo"
 			style="border-radius: 50px;border: none;">
 	</div>
 	<div id="projects" style="margin: 10%;">
@@ -159,7 +159,7 @@
 		<div class="row row-cols-1 row-cols-md-3 g-4" style="margin:auto;">
 			<div class="col">
 				<div class="card">
-					<img src="hand_writen_recg.jpg" class="card-img-top" alt="hand written recognition">
+					<img src="projects/hand_writen_recg.jpg" class="card-img-top" alt="hand written recognition">
 					<div class="card-body">
 						<h5 class="card-title">Hand Writen RecogniIon</h5>
 						<p class="card-text">I used the language Python and it will recognise the numbers and characters
@@ -174,7 +174,7 @@
 			</div>
 			<div class="col">
 				<div class="card">
-					<img src="dashboard.jpg" class="card-img-top" alt="dashboard image">
+					<img src="projects/dashboard.jpg" class="card-img-top" alt="dashboard image">
 					<div class="card-body">
 						<h5 class="card-title">Student Improvement Dashboard</h5>
 						<p class="card-text">Developed a Student Success Dashboard using Django framework, which
@@ -192,7 +192,7 @@
 			</div>
 			<div class="col">
 				<div class="card">
-					<img src="flappy bird.jpg" class="card-img-top" alt="flappy bird">
+					<img src="projects/flappy bird.jpg" class="card-img-top" alt="flappy bird">
 					<div class="card-body">
 						<h5 class="card-title">Flappy Bird Game</h5>
 						<p class="card-text">
@@ -210,7 +210,7 @@
 			</div>
 			<div class="col">
 				<div class="card">
-					<img src="wifi car.jpg" class="card-img-top" alt="Wifi Car">
+					<img src="projects/wifi car.jpg" class="card-img-top" alt="Wifi Car">
 					<div class="card-body">
 						<h5 class="card-title">Wifi Car</h5>
 						<p class="card-text">I have successfully developed a WiFi car that can be controlled using any
@@ -241,13 +241,13 @@
 		<h2 style="margin-bottom: 2%;">Contact</h2>
 		<div class="contact-links">
 			<a href="mailto:sadammanikantam@gmail.com">
-				<img src="email.png" alt="Email" width="35" height="35">
+				<img src="contact/email.png" alt="Email" width="35" height="35">
 			</a>
 			<a href="https://github.com/smanikantam">
-				<img src="github.png" alt="GitHub" width="35" height="35">
+				<img src="contact/github.png" alt="GitHub" width="35" height="35">
 			</a>
 			<a href="https://www.linkedin.com/in/smanikantam/">
-				<img src="linkedin.png" alt="linkedin" width="35" height="35">
+				<img src="contact/linkedin.png" alt="linkedin" width="35" height="35">
 			</a>
 			<!-- Add more contact links with images as desired -->
 		</div>
@@ -258,9 +258,13 @@
 			if (searchTerm === "/resume") {
 				// Replace "resume_file.pdf" with the actual filename and extension of your resume file
 				var downloadLink = document.createElement("a");
-				downloadLink.href = "resume.pdf";
+				downloadLink.href = "media/resume.pdf";
 				downloadLink.download = "resume.pdf";
 				downloadLink.click();
+			}else if(searchTerm === "/dsa"){
+				var page = document.createElement("a");
+				page.href="dsa.html";
+				page.click();
 			} else {
 				alert("Invalid search term");
 			}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>dsa</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .code-snippet {
+            background-color: black;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.4;
+            margin: 10%;
+        }
+
+        .code-snippet .file-type {
+            padding-left: 1%;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            background-color: #343541;
+            border-radius: 10px;
+        }
+
+        .file-type {
+            color: #cccccc;
+        }
+
+        .copy-button{
+            border: none;
+            padding: 4px 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .edit-button{
+            border: none;
+            padding: 4px 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .code-content {
+            overflow-x: auto;
+        }
+        
+        #code-content::-webkit-focus-ring-color {  /* Chrome, Safari, Edge */
+            outline-color: none;
+          }
+          
+          
+
+        /* Language-specific code highlighting styles */
+        code {
+            color: #ffffff;
+        }
+
+        /* Add more specific styles for different programming languages */
+        code.js {
+            color: #f7df1e;
+        }
+
+        code.py {
+            color: #4b8bbe;
+        }
+
+        code.html {
+            color: #e34c26;
+        }
+
+        /* Add more language classes as needed */
+    </style>
+</head>
+
+<body>
+    <img src="dsa/dsa.jpg" alt="dsa-pic" width="75%" height="75%" style="align-items:center;margin:10%;">
+    <img src="dsa/timecomplexity.jpg" alt="timecomplexity" width="50%" height="75%" style="">
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">JavaScript</span>
+            <!-- <button class="edit-button" onclick="editCode()">
+                <img src="logos/edit.png" width="30" height="30" alt="edit">
+            </button> -->
+            <button class="copy-button" onclick="copyCode()">
+                <img src="logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+            </button>
+        </div>
+        <pre class="code-content"><code id="code" contenteditable>
+          gcghhcgchjg
+        </code></pre>
+    </div>
+
+    <script>
+        function editCode() {
+            // Get the current content from the website
+            var currentContent = document.getElementById('code').innerHTML;
+          
+            // Prompt the user to enter the new content
+            var newContent = prompt('Enter the new content:', currentContent);
+          
+            // Update the content on the website
+            document.getElementById('code').innerHTML = newContent;
+          }
+
+        function copyCode() {
+            const codeElement = document.getElementById('code');
+            const code = codeElement.textContent;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Code copied to clipboard!');
+        }
+
+    </script>
+</body>
+
+</html>
