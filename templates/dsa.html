@@ -38,32 +38,28 @@
             </div>
         </div>
         <pre class="code-content">
-            <code id="code">
-                <div class="code-block">
-                    <pre class="code">
-                        int power2(int N){
-                            return 1u&lt;&lt;N;    //0<=N<=31
-                        }
-                    </pre>
-                </div>
-                <div class="code-block" style="display: none;">
-                    <pre class="code">
-                        int power2(int N){
-                            return 1ll&lt;&lt;N; //0<=N<=62
-                        }
-                    </pre>
-                </div>
-            </code>
+            <div class="code-block">
+                int power2(int N){
+                    return 1u&lt;&lt;N;    //0<=N<=31
+                }
+            </div>
+            <div class="code-block" style="display: none;">
+                int power2(int N){
+                    return 1ll&lt;&lt;N; //0<=N<=62
+                }
+            </div>
         </pre>
     </div>
+    
 
     <h2 class="problem">check bit</h2>
     <div class="code-snippet check-bit">
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,3)">o(1)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,4)">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,2)">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,3)">o(2)</a></ul>
+                
             </div>
             <div>
                 <button class="copy-button" onclick="copyCode()">
@@ -72,22 +68,16 @@
             </div>
         </div>
         <pre class="code-content">
-            <code id="code">
-                <div class="code-block">
-                    <pre class="code">
-                        bool checkbit(int N,int b){
-                            return (N&gt;&gt;b)&1;
-                        }
-                    </pre>
-                </div>
-                <div class="code-block" style="display: none;">
-                    <pre class="code">
-                        bool checkbit(int N,int b){
-                            return N&(1&lt;&lt;b)
-                        }
-                    </pre>
-                </div>
-            </code>
+            <div class="code-block">
+                bool checkbit(int N,int b){
+                    return (N&gt;&gt;b)&1;
+                }
+            </div>
+            <div class="code-block" style="display: none;">
+                bool checkbit(int N,int b){
+                    return N&(1&lt;&lt;b)
+                }
+            </div>
         </pre>
     </div>
 

@@ -1,116 +1,81 @@
 body {
-    margin-left: 10%;
-    background-color: gray;
+  margin-left: 10%;
+  background-color: gray;
 }
-.tabs{
-    display:flex;
+.code-content {
+  overflow-x: auto;
+  display: flex;
+}
+.code-block {
+  font-size: x-large;
+  color: burlywood;
+  white-space: pre-line;
+}
+.tabs {
+  display: flex;
 }
 .tabs ul {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 /* .code-block {
     display: none;
 } */
 
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-a{
-    background-color: transparent;
-    text-decoration: none;
-    border-bottom: none;
-    color: #cccccc;
+a {
+  background-color: transparent;
+  text-decoration: none;
+  border-bottom: none;
+  color: #cccccc;
 }
-.images{
-    width: 90%;
-    max-height: 700px;;
-    overflow-x:auto;
-
+.images {
+  width: 90%;
+  max-height: 700px;
+  overflow-x: auto;
 }
-.images::-webkit-scrollbar{
-    display: none;            /*scroll option will there but not visible*/
-  }
-
+.images::-webkit-scrollbar {
+  display: none; /*scroll option will there but not visible*/
+}
 
 .code-snippet {
-    background-color: black;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 16px;
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 1.4;
-    margin-bottom: 7%;
-    margin-right: 7%;
+  background-color: black;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1;
+  margin-bottom: 7%;
+  margin-right: 7%;
 }
 
 .code-snippet .file-type {
-    padding-left: 1%;
+  padding-left: 1%;
 }
 
 .code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #343541;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343541;
+  border-radius: 10px;
 }
 
 .file-type {
-    color: #cccccc;
+  color: #cccccc;
 }
 
 .copy-button {
-    border: none;
-    padding: 4px 8px;
-    border-radius: 10px;
-    cursor: pointer;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .edit-button {
-    border: none;
-    padding: 4px 8px;
-    border-radius: 10px;
-    cursor: pointer;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
-.code-content {
-    overflow-x: auto;
-}
-
-#code-content::-webkit-focus-ring-color {
-    /* Chrome, Safari, Edge */
-    outline-color: none;
-}
-
-
-
-/* Language-specific code highlighting styles */
-.code {
-    color: #ffffff;
-    font-size:x-large;
-    white-space: pre-wrap;
-    padding: 0;
-    margin: 0;
-}
-.code {
-    font-family: "Courier New", monospace;
-    white-space: pre-wrap;
-    margin: 0;
-    border-radius: 5px;
-    text-align: left;
-  }
-
-/* Add more specific styles for different programming languages
-code.js {
-    color: #f7df1e;
-}
-
-code.py {
-    color: #4b8bbe;
-}
-
-code.html {
-    color: #e34c26;
-} */
-
-/* Add more language classes as needed */
