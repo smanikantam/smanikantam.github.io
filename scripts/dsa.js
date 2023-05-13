@@ -22,3 +22,15 @@ function copyCode() {
 
     alert('Code copied to clipboard!');
 }
+function changeTab(event, index) {
+    event.preventDefault(); // Prevents the default anchor tag behavior
+    var codeBlocks = document.getElementsByClassName('code-block');
+    for (var i = 0; i < codeBlocks.length; i++) {
+      if (i === index) {
+        codeBlocks[i].style.display = 'block';
+      } else {
+        codeBlocks[i].style.display = 'none';
+      }
+    }
+  }
+  
