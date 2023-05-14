@@ -6,7 +6,7 @@ body {
   background-color: gray;
 }
 .code-content {
-  /* overflow-x: auto; *//*vertical scroll bar*/
+  overflow-x: auto;
   display: flex;
 }
 .code-block {
