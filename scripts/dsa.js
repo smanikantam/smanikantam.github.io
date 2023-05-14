@@ -22,9 +22,9 @@ function copyCode() {
 
     alert('Code copied to clipboard!');
 }
-function changeTab(event, index) {
+function changeTab(event, index,classname) {
     event.preventDefault(); // Prevents the default anchor tag behavior
-    var codeBlocks = document.getElementsByClassName('code-block');
+    var codeBlocks = document.getElementsByClassName(classname);
     for (var i = 0; i < codeBlocks.length; i++) {
       if (i === index && codeBlocks[i].style.display != 'block') {
         codeBlocks[i].style.display = 'block';

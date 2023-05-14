@@ -13,6 +13,18 @@
 </head>
 
 <body>
+    <div>
+        <ol>
+            <li><a href="#BIT MANIPULATION">BIT MANIPULATION</a>
+                <ul><a href="#power of 2">power 2</a></ul>
+                <ul><a href="#check bit">check bit</a></ul>
+                <ul><a href="#set bits">no.of set bits</a></ul>
+                <ul><a href="#check power 2">check power of 2</a></ul>
+                <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
+                <ul><a href="#set no.of 1's 0's">set no.of 1's 0's </a></ul>
+            </li>
+        </ol>
+    </div>
     <!-- intro images -->
     <div class="images" style="display: flex;">
         <img src="../dsa/dsa.jpg" alt="dsa-pic" width="45%" height="45%" style="align-items:center;margin:auto;">
@@ -21,15 +33,15 @@
         <img src="../dsa/classification_dsa.jpg" alt="timecomplexity" width="40%" height="40%"
             style="align-items:center;margin:10%;">
     </div>
-    <h1 class="topic">BIT MANIPULATION</h1>
+    <h1 class="topic" id="BIT MANIPULATION">BIT MANIPULATION</h1>
     <!-- code -->
-    <h2 class="problem">power of 2</h2>
-    <div class="code-snippet power-of-2">
+    <h2 class="problem" id="power of 2">power of 2</h2>
+    <div class="code-snippet">
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0)">o(1)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,1)">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'power-of-2')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'power-of-2')">o(2)</a></ul>
             </div>
             <div>
                 <button class="copy-button" onclick="copyCode()">
@@ -38,27 +50,27 @@
             </div>
         </div>
         <pre class="code-content">
-            <div class="code-block">
+            <div class="code-block power-of-2">
                 int power2(int N){
-                    return 1u&lt;&lt;N;    //0<=N<=31
+                    return 1u&lt;&lt;N;    //0<=N<=31 ( 1u -> 1 unsigned int)
                 }
             </div>
-            <div class="code-block" style="display: none;">
+            <div class="code-block power-of-2" style="display: none;">
                 int power2(int N){
-                    return 1ll&lt;&lt;N; //0<=N<=62
+                    return 1ll&lt;&lt;N; //0<=N<=62   ( 1ll -> 1 unsigned long long)
                 }
             </div>
         </pre>
     </div>
     
 
-    <h2 class="problem">check bit</h2>
-    <div class="code-snippet check-bit">
+    <h2 class="problem" id="check bit">check bit</h2>
+    <div class="code-snippet">
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,2)">o(1)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,3)">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'check-bit')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'check-bit')">o(2)</a></ul>
                 
             </div>
             <div>
@@ -68,18 +80,175 @@
             </div>
         </div>
         <pre class="code-content">
-            <div class="code-block">
+            <div class="code-block check-bit">
                 bool checkbit(int N,int b){
                     return (N&gt;&gt;b)&1;
                 }
             </div>
-            <div class="code-block" style="display: none;">
+            <div class="code-block check-bit" style="display: none;">
                 bool checkbit(int N,int b){
-                    return N&(1&lt;&lt;b)
+                    return N&(1&lt;&lt;b);
+                    if(it is there){
+                        then happen;
+                    }
                 }
             </div>
         </pre>
     </div>
+
+    <h2 class="problem" id="set bits">set bits (no.of set bits in number)</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'set-bits')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'set-bits')">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,2,'set-bits')">o(3)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block set-bits">
+                int setBits(int N){
+                    int c=0,p=0;
+                    while(N){
+                        if(N&gt;&gt;p&1) c+=1;
+                        N=N&gt;&gt;1
+                    }
+                    return c
+                }
+            </div>
+            <div class="code-block set-bits" style="display: none;">
+                int setBits(int N){
+                    int c=0;
+                    while(N){
+                        c+=N&1;
+                    }
+                    return c;
+                }
+            </div>
+            <div class="code-block set-bits" style="display: none;">
+                int setBits(int N){
+                    int c=0;
+                    while(N){
+                        c+=N&(N-1)
+                    }
+                    return c;
+                }
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="check power 2">check power 2</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'checkpow2')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'checkpow2')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block checkpow2">
+                bool checkPow2(int N){
+                    return N&(N-1)==0;
+                }
+            </div>
+            <div class="code-block checkpow2" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="set bits in position i,j">set bits in position i,j</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'setbitpos')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'setbitpos')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block setbitpos">
+                int setbitpos(int i,int j){
+                    return (1&lt;&lt;i)|(1&lt;&lt;j);
+                }
+            </div>
+            <div class="code-block setbitpos" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="set no.of 1's 0's">set no.of 1's 0's</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'set1s0s')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'set1s0s')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block set1s0s">
+                int set1s0s(i,j){
+                    return ((1&lt;&lt;i)-1)&lt;&lt;j;
+                }
+            </div>
+            <div class="code-block set1s0s" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
+    <!-- <h2 class="problem" id="problem_name">problem_name</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'codeclass')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'codeclass')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block codeclass">
+                //write first code here
+            </div>
+            <div class="code-block codeclass" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div> -->
 
 </body>
 

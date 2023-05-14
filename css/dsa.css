@@ -1,15 +1,18 @@
+html {
+    scroll-behavior: smooth;
+  }
 body {
   margin-left: 10%;
   background-color: gray;
 }
 .code-content {
-  overflow-x: auto;
+  /* overflow-x: auto; *//*vertical scroll bar*/
   display: flex;
 }
 .code-block {
   font-size: x-large;
   color: burlywood;
-  white-space: pre-line;
+  /* white-space: pre-line; */
 }
 .tabs {
   display: flex;
