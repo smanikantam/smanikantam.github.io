@@ -41,6 +41,9 @@ a {
 .images::-webkit-scrollbar {
   display: none; /*scroll option will there but not visible*/
 }
+.code-content::-webkit-scrollbar {
+    display: none; /*scroll option will there but not visible*/
+  }
 
 .code-snippet {
   background-color: black;
