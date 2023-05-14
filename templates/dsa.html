@@ -26,6 +26,8 @@
                 <ul><a href="#MODULO">--MODULO--</a></ul>
                 <ul><a href="#divisors">divisors</a></ul>
                 <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
+                <ul><a href="#repeated thrice except one">repeated thrice except one</a></ul>
+                <ul><a href="#sum of subset">sum of subset</a></ul>
             </li>
         </ol>
     </div>
@@ -346,8 +348,8 @@
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0,'codeclass')">o(N<sup>2</sup>)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,1,'codeclass')">o(N)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'twiceButOne')">o(N&sup2;)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'twiceButOne')">o(N)</a></ul>
                 
             </div>
             <div>
@@ -357,10 +359,129 @@
             </div>
         </div>
         <pre class="code-content">
-            <div class="code-block codeclass">
-                //write first code here
+            <div class="code-block twiceButOne">
+                //     brute force     //
+
+                int twiceButOne(int arr[],int n){
+                    int c=0;
+                    for(int i=0;i&lt;n;i++){
+                        c=1;
+                        for(int j=0;j&lt;n,j!=i;j++){
+                            if(arr[i]==arr[j]) c++;
+                        }
+                        if(c==1) return arr[i];
+                    }
+                }
             </div>
-            <div class="code-block codeclass" style="display: none;">
+            <div class="code-block twiceButOne" style="display: none;">
+                //    bit manipulation   //
+
+                int twiceButOne(int arr[],int n){
+
+                    int c=0;
+                    for(int i=0;i&lt;n;i++){
+                        c^=arr[i];
+                    }
+                    return c;
+                }
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="repeated thrice except one">repeated thrice except one</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'thriceButOne')">o(N&sup2;)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'thriceButOne')">o(31*N)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block thriceButOne">
+                //     brute force     //
+
+                int thriceButOne(int arr[],int n){
+                    int c=0;
+                    for(int i=0;i&lt;n;i++){
+                        c=1;
+                        for(int j=0;j&lt;n,j!=i;j++){
+                            if(arr[i]==arr[j]) c++;
+                        }
+                        if(c==1) return arr[i];
+                    }
+                }
+            </div>
+            <div class="code-block thriceButOne" style="display: none;">
+                int thriceButOne(int arr[],int n){
+                    int ans=0;
+                    for(int i=0;i<=30;i++){
+                        int c=0;
+                        for(int j=0;j&lt;n;j++){
+                            if((arr[j]>>i)&1) c++;
+                        }
+                        if(c%3==0) ans=ans|(1&lt;&lt;i);
+                    }
+                    return ans;
+                }
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="concept">sum of sub sets using bit manipulation</h2>
+    <div class="concept">
+        <h3>arr : 7 -2 5</h3>
+        <h3>2  1  0  ->index</h3>
+        <h3>5  -2  7 </h3>
+        <h3>0   0  0 ->[]</h3>
+        <h3>0   0  1 ->[7]</h3>
+        <h3>0   1  0 ->[-2]</h3>
+        <h3>0   1  1 ->[7,-2]</h3>
+        <h3>1   0  0 ->[5]</h3>
+        <h3>1   0  1 ->[5,7]</h3>
+        <h3>1   1  0 ->[5,-2]</h3>
+        <h3>1   1  1 ->[5,-2,7]</h3>
+    </div>
+
+    <h2 class="problem" id="sum of subset">sum of subset</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'sumofsubset')">o(N*2<sup>N</sup>)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'sumofsubset')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block sumofsubset">
+                int sumSubSet(int arr[], int n, int k) {
+                    int p = (1 << n) - 1; // Initialize p to represent all subsets of arr
+                    for (int i = p; i > 0; i--) {
+                        int s = 0;
+                        int temp = i;
+                        for (int j = n - 1; j >= 0; j--) {
+                            s +=(temp & 1)* arr[j];
+                            temp = temp >> 1;
+                        }
+                        if (s == k)
+                            return true;
+                    }
+                    return false;
+                }                
+            </div>
+            <div class="code-block sumofsubset" style="display: none;">
                 //write second code here
             </div>
         </pre>
@@ -393,5 +514,7 @@
     <a href="#top" id="stickyButton"><img src="../logos/uparrow.png" alt="top" width="20px" height="20px"></a>
 
 </body>
+
+
 
 </html>
