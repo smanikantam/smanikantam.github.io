@@ -21,10 +21,11 @@
                 <ul><a href="#set bits">no.of set bits</a></ul>
                 <ul><a href="#check power 2">check power of 2</a></ul>
                 <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
-                <ul><a href="#set no.of 1's 0's">set no.of 1's 0's </a></ul>
-                <ul><a href="#a pow b">a pow b </a></ul>
+                <ul><a href="#set no.of 1's 0's">set no.of 1's 0's</a></ul>
+                <ul><a href="#a pow b">a pow b</a></ul>
                 <ul><a href="#MODULO">--MODULO--</a></ul>
-                <ul><a href="#divisors">divisors </a></ul>
+                <ul><a href="#divisors">divisors</a></ul>
+                <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
             </li>
         </ol>
     </div>
@@ -228,8 +229,10 @@
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0,'apowb')">o(1)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,1,'apowb')">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'apowb')">o(N)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'apowb')">sol</a></ul>
+                <ul><a href="#" onclick="changeTab(event,2,'apowb')">o(log2(N))</a></ul>
+                <ul><a href="#" onclick="changeTab(event,3,'apowb')">o(32)</a></ul>
                 
             </div>
             <div>
@@ -258,6 +261,29 @@
                     int ans=1,M=1e9+7;
                     for(int i=1;i<=b;i++){
                         ans=((ans%M)*(a%M)%M);
+                    }
+                    return ans;
+                }
+            </div>
+            <div class="code-block apowb" style="display: none;">
+                int apowb(int a,int b){
+                    int ans=1,x=a;
+                    while(N){
+                        if(N&1) ans=ans*x;
+                        x=x*x;
+                        N=N&gt;&gt;1;
+                    }
+                    return ans;
+                }
+            </div>
+            <div class="code-block apowb" style="display: none;">
+                int apowb(int a,int b){
+                    int ans=1,x=a;
+                    for(int i=0;i<=31;i++){
+                        if((N>>i)&1){ //checking ith bit
+                            ans=ans*x;
+                        }
+                        x=x*x;
                     }
                     return ans;
                 }
@@ -311,6 +337,31 @@
                     }
                     return 0;
                 }
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="every no repeated twice except one">every no repeated twice but one</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'codeclass')">o(N<sup>2</sup>)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'codeclass')">o(N)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block codeclass">
+                //write first code here
+            </div>
+            <div class="code-block codeclass" style="display: none;">
+                //write second code here
             </div>
         </pre>
     </div>
