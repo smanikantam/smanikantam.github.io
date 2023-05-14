@@ -1,9 +1,20 @@
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 body {
+  font-family:'Courier New', Courier, monospace;
   margin-left: 10%;
-  background-color: gray;
+  background-color: rgb(41, 41, 41);
+}
+.topic{
+    color: #ffffff;
+}
+.problem{
+    color: #ff00ea;
+}
+.concept{
+    color: #ff0000;
+    margin-bottom: 3%;
 }
 .code-content {
   overflow-x: auto;
@@ -14,19 +25,32 @@ body {
   color: burlywood;
   /* white-space: pre-line; */
 }
+#index{
+    color:#ff00ea;
+}
+#index a {
+  color: rgb(0, 128, 53);
+}
+#index ul {
+  list-style-type: circle;
+}
+#stickyButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  /* Add styling as per your preference */
+}
 .tabs {
   display: flex;
 }
 .tabs ul {
   cursor: pointer;
+  list-style-type: none;
 }
 /* .code-block {
     display: none;
 } */
-
-ul {
-  list-style-type: none;
-}
 a {
   background-color: transparent;
   text-decoration: none;
@@ -42,8 +66,8 @@ a {
   display: none; /*scroll option will there but not visible*/
 }
 .code-content::-webkit-scrollbar {
-    display: none; /*scroll option will there but not visible*/
-  }
+  display: none; /*scroll option will there but not visible*/
+}
 
 .code-snippet {
   background-color: black;

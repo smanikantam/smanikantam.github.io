@@ -12,8 +12,8 @@
 
 </head>
 
-<body>
-    <div>
+<body id="top">
+    <div id="index">
         <ol>
             <li><a href="#BIT MANIPULATION">BIT MANIPULATION</a>
                 <ul><a href="#power of 2">power 2</a></ul>
@@ -22,6 +22,9 @@
                 <ul><a href="#check power 2">check power of 2</a></ul>
                 <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
                 <ul><a href="#set no.of 1's 0's">set no.of 1's 0's </a></ul>
+                <ul><a href="#a pow b">a pow b </a></ul>
+                <ul><a href="#MODULO">--MODULO--</a></ul>
+                <ul><a href="#divisors">divisors </a></ul>
             </li>
         </ol>
     </div>
@@ -86,12 +89,7 @@
                 }
             </div>
             <div class="code-block check-bit" style="display: none;">
-                bool checkbit(int N,int b){
-                    return N&(1&lt;&lt;b);
-                    if(it is there){
-                        then happen;
-                    }
-                }
+                //write second code here
             </div>
         </pre>
     </div>
@@ -225,6 +223,98 @@
         </pre>
     </div>
 
+    <h2 class="problem" id="a pow b">a pow b</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'apowb')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'apowb')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block apowb">
+                int apowb(int a,int b){
+                    int ans=1;
+                    for(int i=1;i<=b;i++){
+                        ans=ans*a;
+                    }
+                    return ans;
+                }
+                //issue{
+                    when a=3 and b=100 then the value will be overflow of int
+                }
+            </div>
+            <div class="code-block apowb" style="display: none;">
+                //sloution for previous by adding mode we can solve
+
+                int apowb(int a,int b){
+                    int ans=1,M=1e9+7;
+                    for(int i=1;i<=b;i++){
+                        ans=((ans%M)*(a%M)%M);
+                    }
+                    return ans;
+                }
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="concept" id="MODULO">MODULO</h2>
+    <div class="concept">
+            <h3>(A+B)%M=(A%M+B%M)%M</h3>
+            <h3>(A-B)%M=(A-B%M)%M (or) ((A%M-B%M)+M)%M</h3>
+            <h3>(A*B)%M=(A%M*B%M)%M</h3>
+            <h3>(A/B)%M -> Extended euclid algo</h3>
+    </div>
+
+    <h2 class="problem" id="divisors">divisors</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'divisors')">o(N)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'divisors')">o(&radic;N)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block divisors">
+                int divisors(int N){
+                    for(int i=1;i<=N;i++){
+                        if(N%i==0){
+                            cout&lt;&lt;i&lt;&lt;'\n';
+                        }
+                    }
+                    return 0;
+                }
+            </div>
+            <div class="code-block divisors" style="display: none;">
+                int divisors(int N){
+                    int c=0;
+                    for(int i=1;i<=&radic;N;i++){
+                        if(N%i==0){
+                            cout&lt;&lt;i,N/i&lt;&lt;'\n';
+                            c+=2
+                        }
+                        cout &lt;&lt; "count is" &lt;&lt; c &lt;&lt;'\n'
+                    }
+                    return 0;
+                }
+            </div>
+        </pre>
+    </div>
+
     <!-- <h2 class="problem" id="problem_name">problem_name</h2>
     <div class="code-snippet">
         <div class="code-header">
@@ -249,6 +339,7 @@
             </div>
         </pre>
     </div> -->
+    <a href="#top" id="stickyButton"><img src="../logos/uparrow.png" alt="top" width="20px" height="20px"></a>
 
 </body>
 
