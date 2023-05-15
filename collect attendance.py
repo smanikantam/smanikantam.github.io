@@ -30,7 +30,7 @@ browser.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US) Ap
 browser.set_handle_refresh(False)
 # Login
 
-# data={'20881A05B1':'#NN5A','20881A0574':'#E4BN'}
+# data={'20881A05B1':'#NN5A','20881A0574':'#E4BN','20881A05A7':'#ZF2F'}
 # numb=input("enter last 2 digits:")
 # numb='20881A05'+numb
 # if(numb not in data):
