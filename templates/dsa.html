@@ -128,7 +128,8 @@
                 int setBits(int N){
                     int c=0;
                     while(N){
-                        c+=N&1;
+                        c+=N & 1;
+                        N = N >>1 ;
                     }
                     return c;
                 }
