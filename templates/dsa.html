@@ -13,23 +13,43 @@
 </head>
 
 <body id="top">
-    <div id="index">
-        <ol>
-            <li><a href="#BIT MANIPULATION">BIT MANIPULATION</a>
-                <ul><a href="#power of 2">power 2</a></ul>
-                <ul><a href="#check bit">check bit</a></ul>
-                <ul><a href="#set bits">no.of set bits</a></ul>
-                <ul><a href="#check power 2">check power of 2</a></ul>
-                <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
-                <ul><a href="#set no.of 1's 0's">set no.of 1's 0's</a></ul>
-                <ul><a href="#a pow b">a pow b</a></ul>
-                <ul><a href="#MODULO">--MODULO--</a></ul>
-                <ul><a href="#divisors">divisors</a></ul>
-                <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
-                <ul><a href="#repeated thrice except one">repeated thrice except one</a></ul>
-                <ul><a href="#sum of subset">sum of subset</a></ul>
-            </li>
-        </ol>
+    <div>
+        <div id="index_BIT_MANIPULATION">
+            <ol>
+                <li><a href="#BIT MANIPULATION">BIT MANIPULATION</a>
+                    <ul><a href="#power of 2">power 2</a></ul>
+                    <ul><a href="#check bit">check bit</a></ul>
+                    <ul><a href="#set bits">no.of set bits</a></ul>
+                    <ul><a href="#check power 2">check power of 2</a></ul>
+                    <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
+                    <ul><a href="#set no.of 1's 0's">set no.of 1's 0's</a></ul>
+                    <ul><a href="#a pow b">a pow b</a></ul>
+                    <ul><a href="#MODULO">--MODULO--</a></ul>
+                    <ul><a href="#divisors">divisors</a></ul>
+                    <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
+                    <ul><a href="#repeated thrice except one">repeated thrice except one</a></ul>
+                    <ul><a href="#sum of subset">sum of subset</a></ul>
+                </li>
+            </ol>
+        </div>
+        <div id="index_BINARY_SEARCH">
+            <ol>
+                <li><a href="#BINARY SEARCH">BINARY_SEARCH</a>
+                    <ul><a href="#power of 2">power 2</a></ul>
+                    <ul><a href="#check bit">check bit</a></ul>
+                    <ul><a href="#set bits">no.of set bits</a></ul>
+                    <ul><a href="#check power 2">check power of 2</a></ul>
+                    <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
+                    <ul><a href="#set no.of 1's 0's">set no.of 1's 0's</a></ul>
+                    <ul><a href="#a pow b">a pow b</a></ul>
+                    <ul><a href="#MODULO">--MODULO--</a></ul>
+                    <ul><a href="#divisors">divisors</a></ul>
+                    <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
+                    <ul><a href="#repeated thrice except one">repeated thrice except one</a></ul>
+                    <ul><a href="#sum of subset">sum of subset</a></ul>
+                </li>
+            </ol>
+        </div>
     </div>
     <!-- intro images -->
     <div class="images" style="display: flex;">
@@ -487,6 +507,89 @@
             </div>
         </pre>
     </div>
+
+    <h1 class="topic" id="BINARY SEARCH">BINARY SEARCH</h1>
+
+    <h2 class="problem" id="bianry search">bianry search</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'binary_search')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'binary_search')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block binary_search">
+                //returns true if the number found in the sorted array
+                int BinarySearch(int arr,int len,int target){
+                    int lo=0,hi=len-1;
+                    while(lo<=hi){
+                        int mid=lo+(hi-lo)/2;
+                        if(arr[mid]==target) 
+                            return true;       //you can return index also like ( return mid; )
+                        else if(arr[mid] < k){
+                            lo=mid+1;
+                        }
+                        else{
+                            hi=mid-1;
+                        }
+                    }
+                    return false;  if index is not found then return -1;
+                }
+            </div>
+            <div class="code-block binary_search" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="floor binary search">floor binary search</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'floorBS')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'floorBS')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block floorBS">
+                //floor number or lesser nearest number in the sorted array
+                int BinarySearch(int arr,int len,int target){
+                    int lo=0,hi=len-1;
+                    while(lo<=hi){
+                        int mid=lo+(hi-lo)/2;
+                        if(arr[mid]<=target) 
+                            return true;
+                        else if(arr[mid] < k){
+                            lo=mid+1;
+                        }
+                        else{
+                            hi=mid-1;
+                        }
+                    }
+                    return false;
+                }
+            </div>
+            <div class="code-block floorBS" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
 
     <!-- <h2 class="problem" id="problem_name">problem_name</h2>
     <div class="code-snippet">
