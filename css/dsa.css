@@ -27,6 +27,7 @@ body {
 }
 #index{
     color:#ff00ea;
+    display: flex;
 }
 #index a {
   color: rgb(0, 128, 53);

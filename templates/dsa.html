@@ -13,7 +13,7 @@
 </head>
 
 <body id="top">
-    <div>
+    <div id="index">
         <div id="index_BIT_MANIPULATION">
             <ol>
                 <li><a href="#BIT MANIPULATION">BIT MANIPULATION</a>
@@ -33,20 +33,12 @@
             </ol>
         </div>
         <div id="index_BINARY_SEARCH">
-            <ol>
+            <ol start="2">
                 <li><a href="#BINARY SEARCH">BINARY_SEARCH</a>
-                    <ul><a href="#power of 2">power 2</a></ul>
-                    <ul><a href="#check bit">check bit</a></ul>
-                    <ul><a href="#set bits">no.of set bits</a></ul>
-                    <ul><a href="#check power 2">check power of 2</a></ul>
-                    <ul><a href="#set bits in position i,j">set bits in position i,j</a></ul>
-                    <ul><a href="#set no.of 1's 0's">set no.of 1's 0's</a></ul>
-                    <ul><a href="#a pow b">a pow b</a></ul>
-                    <ul><a href="#MODULO">--MODULO--</a></ul>
-                    <ul><a href="#divisors">divisors</a></ul>
-                    <ul><a href="#every no repeated twice except one">every no repeated twice except one</a></ul>
-                    <ul><a href="#repeated thrice except one">repeated thrice except one</a></ul>
-                    <ul><a href="#sum of subset">sum of subset</a></ul>
+                    <ul><a href="#binary search">binary search</a></ul>
+                    <ul><a href="#floor binary search">floor binary search</a></ul>
+                    <ul><a href="#count repeated number using binary search">count repeated number using binary search</a></ul>
+                    <ul><a href="#finding the root of a number using binary search">finding the root of a number using binary search</a></ul>
                 </li>
             </ol>
         </div>
@@ -510,12 +502,12 @@
 
     <h1 class="topic" id="BINARY SEARCH">BINARY SEARCH</h1>
 
-    <h2 class="problem" id="bianry search">bianry search</h2>
+    <h2 class="problem" id="binary search">binary search</h2>
     <div class="code-snippet">
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0,'binary_search')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'binary_search')">o(N)</a></ul>
                 <ul><a href="#" onclick="changeTab(event,1,'binary_search')">o(2)</a></ul>
                 
             </div>
@@ -528,7 +520,7 @@
         <pre class="code-content">
             <div class="code-block binary_search">
                 //returns true if the number found in the sorted array
-                int BinarySearch(int arr,int len,int target){
+                int BinarySearch(int arr[],int len,int target){
                     int lo=0,hi=len-1;
                     while(lo<=hi){
                         int mid=lo+(hi-lo)/2;
@@ -555,7 +547,7 @@
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0,'floorBS')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'floorBS')">o(log(N))</a></ul>
                 <ul><a href="#" onclick="changeTab(event,1,'floorBS')">o(2)</a></ul>
                 
             </div>
@@ -568,20 +560,18 @@
         <pre class="code-content">
             <div class="code-block floorBS">
                 //floor number or lesser nearest number in the sorted array
-                int BinarySearch(int arr,int len,int target){
-                    int lo=0,hi=len-1;
+                int FloorBinarySearch(int arr[],int len,int target){
+                    int lo=0,hi=len-1,ans=-1;
                     while(lo<=hi){
                         int mid=lo+(hi-lo)/2;
-                        if(arr[mid]<=target) 
-                            return true;
-                        else if(arr[mid] < k){
+                        if(arr[mid]<=target){
+                            ans=mid;
                             lo=mid+1;
-                        }
-                        else{
+                        }else{
                             hi=mid-1;
                         }
                     }
-                    return false;
+                    return ans?(arr[ans]==target):ans+1;
                 }
             </div>
             <div class="code-block floorBS" style="display: none;">
@@ -590,7 +580,101 @@
         </pre>
     </div>
 
+    <h2 class="problem" id="count repeated number using binary search">count repeated number using binary search</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'count repeated BS')">o(Nlog(N)+Q(log(N)+Log(N)))</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'count repeated BS')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block count repeated BS">
+                //first find left of the target number and then right atlast find the distance
 
+                int countRepeatedBinarySearchLeft(int arr[],int N,int target){
+                    int lo=0,hi=N-1,ans=-1;
+                    while(lo<=hi){
+                        mid=lo+(hi-lo)/2;
+                        if(arr[mid]==target){
+                            ans=mid;
+                            hi=mid-1;
+                        }else if(arr[mid]>target){
+                            hi=mid-1;
+                        }
+                        else{
+                            lo=mid+1;
+                        }
+                    }
+                    return ans
+                }
+                int countRepeatedBinarySearchRight(int arr[],int N,int target){
+                    int lo=0,hi=N-1,ans=-1;
+                    while(lo<=hi){
+                        mid=lo+(hi-lo)/2;
+                        if(arr[mid]==target){
+                            ans=mid;
+                            lo=mid+1
+                        }else if(arr[mid]>target){
+                            hi=mid-1;
+                        }
+                        else{
+                            lo=mid+1;
+                        }
+                    }
+                    return ans
+                }
+            </div>
+            <div class="code-block count repeated BS" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+
+    <h2 class="problem" id="finding the root of a number using binary search">finding the root of a number using binary search</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'rootnumbBS')">o(log(N))</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'rootnumbBS')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block rootnumbBS">
+                int rootNumbBinarySearch(int num){
+                    int lo=0,hi=num-1;
+                    while(lo<=hi){
+                        mid=lo+(hi-lo)/2;
+                        if(mid*mid==num){     //square root -> log2(N)*log2(2)=log2(N)
+                            return mid;       //but for pth root -> log2(N)*log2(P) (for finding the power function)
+                        }else if(mid*mid < k){
+                            lo=mid+1;
+                        }else{
+                            hi=mid-1;
+                        }
+                    }
+                }
+            </div>
+            <div class="code-block rootnumbBS" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+    
     <!-- <h2 class="problem" id="problem_name">problem_name</h2>
     <div class="code-snippet">
         <div class="code-header">
