@@ -10,7 +10,7 @@ function editCode() {
 }
 
 function copyCode() {
-    const codeElement = document.getElementById('code');
+    const codeElement = document.getElementsByClassName('code-blok');
     const code = codeElement.textContent;
 
     const tempTextArea = document.createElement('textarea');

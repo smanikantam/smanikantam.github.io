@@ -247,6 +247,7 @@
                 <ul><a href="#" onclick="changeTab(event,0,'apowb')">o(N)</a></ul>
                 <ul><a href="#" onclick="changeTab(event,1,'apowb')">sol</a></ul>
                 <ul><a href="#" onclick="changeTab(event,2,'apowb')">o(log2(N))</a></ul>
+                <ul><a href="#" onclick="changeTab(event,2,'apowb')">o(log2(N)) Recursive</a></ul>
                 <ul><a href="#" onclick="changeTab(event,3,'apowb')">o(32)</a></ul>
                 
             </div>
@@ -289,6 +290,14 @@
                         N=N&gt;&gt;1;
                     }
                     return ans;
+                }
+            </div>
+            <div class="code-block apowb" style="display: none;">
+                int apowb(int a,int b){
+                    p=apowb(a,b/2)
+                    if(b%2==0):
+                        return p*p
+                    return a*p*p
                 }
             </div>
             <div class="code-block apowb" style="display: none;">
@@ -468,7 +477,7 @@
             <span class="file-type">Cpp</span>
             <div class="tabs">
                 <ul><a href="#" onclick="changeTab(event,0,'sumofsubset')">o(N*2<sup>N</sup>)</a></ul>
-                <ul><a href="#" onclick="changeTab(event,1,'sumofsubset')">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'sumofsubset')">o(N) Recursive</a></ul>
                 
             </div>
             <div>
@@ -495,7 +504,15 @@
                 }                
             </div>
             <div class="code-block sumofsubset" style="display: none;">
-                //write second code here
+                //this will only the sum is present in the subsets or not
+
+                bool sumSubSet(int arr[],int len,int target,int csum,int idx){
+
+                    if(idx==len) 
+                        return k==csum;
+
+                    return sumSubSet(arr,len,target,csum+arr[idx],idx+1) or sumSubSet(arr,len,target,csum,idx+1)
+                }
             </div>
         </pre>
     </div>
@@ -520,19 +537,25 @@
         <pre class="code-content">
             <div class="code-block binary_search">
                 //returns true if the number found in the sorted array
+
                 int BinarySearch(int arr[],int len,int target){
+
                     int lo=0,hi=len-1;
+
                     while(lo<=hi){
                         int mid=lo+(hi-lo)/2;
+
                         if(arr[mid]==target) 
-                            return true;       //you can return index also like ( return mid; )
+                            return true;          //you can return index also like ( return mid; )
+                            
                         else if(arr[mid] < k){
                             lo=mid+1;
-                        }
-                        else{
+                        
+                        }else{
                             hi=mid-1;
                         }
                     }
+
                     return false;  if index is not found then return -1;
                 }
             </div>
