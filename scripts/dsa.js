@@ -33,4 +33,26 @@ function changeTab(event, index,classname) {
       }
     }
   }
+  async function generateResponse(userInput) {
+    // Load the ONNX model
+    const session = new onnx.InferenceSession();
+    const modelPath = '../media/nxt_word.onnx'; // Replace with the path to your ONNX model file
+    await session.loadModel(modelPath);
+  
+    // Prepare the input data
+    const sequence = tokenizer.textsToSequences([userInput])[0];
+    const paddedSequence = padSequences([sequence], 15);
+    const tensor = new onnx.Tensor(paddedSequence, 'float32', [1, paddedSequence.length]);
+  
+    // Run the inference
+    const outputMap = await session.run([tensor]);
+    const outputTensor = outputMap.values().next().value;
+    const outputData = outputTensor.data;
+    const predictedIndex = outputData.indexOf(Math.max(...outputData));
+    const predictedWord = tokenizer.indexToWord[predictedIndex];
+  
+    return predictedWord;
+  }
+  
+  
   

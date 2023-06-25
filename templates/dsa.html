@@ -36,7 +36,7 @@
             <ol start="2">
                 <li><a href="#BINARY SEARCH">BINARY_SEARCH</a>
                     <ul><a href="#binary search">binary search</a></ul>
-                    <ul><a href="#floor binary search">floor binary search</a></ul>
+                    <ul><a href="#floor and ciel binary search">floor and ciel binary search</a></ul>
                     <ul><a href="#count repeated number using binary search">count repeated number using binary search</a></ul>
                     <ul><a href="#finding the root of a number using binary search">finding the root of a number using binary search</a></ul>
                 </li>
@@ -565,13 +565,13 @@
         </pre>
     </div>
 
-    <h2 class="problem" id="floor binary search">floor binary search</h2>
+    <h2 class="problem" id="floor and ciel binary search">floor and ciel binary search</h2>
     <div class="code-snippet">
         <div class="code-header">
             <span class="file-type">Cpp</span>
             <div class="tabs">
-                <ul><a href="#" onclick="changeTab(event,0,'floorBS')">o(log(N))</a></ul>
-                <ul><a href="#" onclick="changeTab(event,1,'floorBS')">o(2)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,0,'floorBS')">floor O(N)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'floorBS')">ciel O(N)</a></ul>
                 
             </div>
             <div>
@@ -594,11 +594,24 @@
                             hi=mid-1;
                         }
                     }
-                    return ans?(arr[ans]==target):ans+1;
+                    return (arr[ans]==target)?ans:ans+1;
                 }
             </div>
             <div class="code-block floorBS" style="display: none;">
-                //write second code here
+                //ciel number or greater nearest number in the sorted array
+                int FloorBinarySearch(int arr[],int len,int target){
+                    int lo=0,hi=len-1,ans=-1;
+                    while(lo<=hi){
+                        int mid=lo+(hi-lo)/2;
+                        if(arr[mid]>=target){
+                            ans=mid;
+                            hi=mid-1;
+                        }else{
+                            lo=mid+1;
+                        }
+                    }
+                    return (arr[ans]==target)?ans:ans+1;
+                }
             </div>
         </pre>
     </div>
