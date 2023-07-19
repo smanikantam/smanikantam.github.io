@@ -6,249 +6,303 @@
     <title>Store</title>
     <link rel="icon" href="logos/f.png" sizes="16x16" type="image/png">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 100px;
+            margin-top: 15px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
         #disclosure {
             position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
             background-color: #f2f2f2;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
             font-size: 14px;
             color: #666666;
         }
-        #xiaomi_pad_6{
-            display: flex;
-            align-content: space-around;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
+        .navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        #items{
-            display: flex;
-            align-content: space-around;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
+        .card {
+            transition: transform 0.2s;
         }
-        #latest{
-            display: flex;
-            align-content: space-around;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
+
+        .card:hover {
+            transform: scale(1.05);
         }
-        #yt_vid{
-            display: flex;
-            align-content: space-around;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
-        }
-        #items iframe{
-            margin: 20px;
-            padding: 10px;
-            width: 230px;
-            height: 300px;
-        }
-        #yt_vid iframe{
-            margin: 20px;
-            padding: 10px;
-        }
-        #latest .amazon-product{
-            margin: 20px;
-            padding: 10px;
-            width: 230px;
-            height: 300px;
-            
-        }
-        h2{
-            text-align: center;
-            padding-top: 66px;
-            margin-top: 20%;
+        #contact{
+            margin-bottom: 50px;
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/index.css">
-	<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
 </head>
 <body>
-    <div id="about">
-		<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#" style="margin-left: 10%;">Forfof</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#xiaomi_pad_6">latest updates</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#contact">contact</a>
-						</li>
-					</ul>
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" id="searchbox" type="search" placeholder="Search"
-							aria-label="Search" autocomplete="off">
-						<button class="btn btn-outline-success" type="submit" id="searchButton"
-							style="margin-right: 20%;">Search</button>
-					</form>
-				</div>
-			</div>
-		</nav>
-	</div>
-    <h2>The BEST pack of xiaomi pad 6 and it's accessories</h2>
-    <div id="latest" style="align-content: center;">
-        <div class="amazon-product">
-            <a href="https://amzn.to/3PYhEow" target="_blank">
-                <img src="product_images/xiaomi_pad_6.jpg" alt="Xiaomi Pad 6" width="300" height="300">
-            </a>
-            <p>Xiaomi Pad 6</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="margin-left: 10%;">Forfof</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#xiaomi_pad_6">latest updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="searchbox" type="search" placeholder="Search"
+                        aria-label="Search" autocomplete="off">
+                    <button class="btn btn-outline-success" type="submit" id="searchButton"
+                        style="margin-right: 20%;">Search</button>
+                </form>
+            </div>
         </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3PYhEow" target="_blank">
-                <img src="product_images/redmi_buds_4_active.jpg" alt="redmi buds 4 active" width="300" height="300">
-            </a>
-            <p>redmi buds 4 active</p>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>The BEST pack of Xiaomi Pad 6 and its accessories</h2>
+        <div id="latest" class="row justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="https://amzn.to/3PYhEow" target="_blank">
+                        <img src="product_images/xiaomi_pad_6.jpg" alt="Xiaomi Pad 6" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Xiaomi Pad 6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="https://amzn.to/3PYhEow" target="_blank">
+                        <img src="product_images/redmi_buds_4_active.jpg" alt="redmi buds 4 active" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">redmi buds 4 active</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="https://amzn.to/3OkHIc1" target="_blank">
+                        <img src="product_images/screen_guard.jpeg" alt="Gear Guard Screen Protector" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Gear Guard Screen Protector</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="https://amzn.to/3XX79ns" target="_blank">
+                        <img src="product_images/pen_for_pad6.jpeg" alt="ProElite Active Stylus Pen for Xiaomi Pad 6" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">ProElite Active Stylus Pen for Xiaomi Pad 6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="https://amzn.to/3rC0R0r" target="_blank">
+                        <img src="product_images/case_for_pad6.jpg" alt="Robustrion Cover for Xiaomi Mi Pad 6 Cover" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Robustrion Cover for Xiaomi Mi Pad 6 Cover</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3OkHIc1" target="_blank">
-                <img src="product_images/screen_guard.jpeg" alt="Gear Guard Screen Protector" width="300" height="300">
-            </a>
-            <p>Gear Guard Screen Protector</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3XX79ns" target="_blank">
-                <img src="product_images/pen_for_pad6.jpeg" alt="ProElite Active Stylus Pen for Xiaomi Pad 6" width="300" height="300">
-            </a>
-            <p>ProElite Active Stylus Pen for Xiaomi Pad 6</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3rC0R0r" target="_blank">
-                <img src="product_images/case_for_pad6.jpg" alt="Robustrion Cover for Xiaomi Mi Pad 6 Cover" width="300" height="300">
-            </a>
-            <p>Robustrion Cover for Xiaomi Mi Pad 6 Cover</p>
-        </div>
-    </div>
-    <h2>The BEST Basic needs for daily life</h2>
-    <div id="items">
-        <div class="amazon-product">
-            <a href="https://amzn.to/44VJbLD" target="_blank">
-                <img src="product_images/red_lemon_bag.jpeg" alt="red lemon bag" width="300" height="300">
-            </a>
-            <p>red lemon bag</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3PYhEow" target="_blank">
-                <img src="product_images/5in1brush.jpeg" alt="5 in 1 brush" width="300" height="300">
-            </a>
-            <p>5 in 1 brush</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3PYhEow" target="_blank">
-                <img src="product_images/7in1brush.jpeg" alt="7 in 1 brush" width="300" height="300">
-            </a>
-            <p>7 in 1 brush</p>
-        </div>
+<hr>
+        <section>
+            <h2 class="section-title">The BEST Basic needs for daily life</h2>
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/44VJbLD" target="_blank">
+                            <img src="product_images/red_lemon_bag.jpeg" alt="red lemon bag" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">red lemon bag</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3PYhEow" target="_blank">
+                            <img src="product_images/5in1brush.jpeg" alt="5 in 1 brush" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">5 in 1 brush</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3PYhEow" target="_blank">
+                            <img src="product_images/7in1brush.jpeg" alt="7 in 1 brush" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">7 in 1 brush</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h2 class="section-title">The interesting CYBER videos</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/NoP0lADOrZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h2 class="section-title">The BEST nano Power banks for EVER</h2>
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3rqD9nB" target="_blank">
+                            <img src="product_images/urbn10000.jpeg" alt="urbn 10000 power bank" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">urbn 10000 power bank</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3Dj7N4W" target="_blank">
+                            <img src="product_images/mipowerbank10000.jpeg" alt="mi power bank" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">mi power bank</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3K4uXjB" target="_blank">
+                            <img src="product_images/urbn20000nano.jpeg" alt="nano urbn 20000 power bank" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">nano urbn 20000 power bank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h2 class="section-title">The BEST Gadgets for tech</h2>
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3XXenrA" target="_blank">
+                            <img src="product_images/ultra_prolink_connector.jpeg" alt="ulta pro link connectors" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">ulta pro link connectors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3XYFjXM" target="_blank">
+                            <img src="product_images/mini_keyboard.jpeg" alt="mini keyboard" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">mini keyboard</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/3O2trQd" target="_blank">
+                            <img src="product_images/veriluxhub.jpeg" alt="verilux connector hub" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">verilux connector hub</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="https://amzn.to/43wgwLV" target="_blank">
+                            <img src="product_images/t&gspeakerbuds.jpeg" alt="speaker and buds" class="card-img-top">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">speaker and buds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-    </div>
-    <h2>The interesting CYBER videos</h2>
-    <div id="yt_vid">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NoP0lADOrZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <h2>The BEST nano Power banks for EVER</h2>
-    <div id="items">
-        <div class="amazon-product">
-            <a href="https://amzn.to/3rqD9nB" target="_blank">
-                <img src="product_images/urbn10000.jpeg" alt="urbn 10000 power bank" width="300" height="300">
-            </a>
-            <p>urbn 10000 power bank</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3Dj7N4W" target="_blank">
-                <img src="product_images/mipowerbank10000.jpeg" alt="mi power bank" width="300" height="300">
-            </a>
-            <p>mi power bank</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3K4uXjB" target="_blank">
-                <img src="product_images/urbn20000nano.jpeg" alt="nano urbn 20000 power bank" width="300" height="300">
-            </a>
-            <p>nano urbn 20000 power bank</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/43y06mb" target="_blank">
-                <img src="product_images/7in1brush.jpeg" alt="type c to type c" width="300" height="300">
-            </a>
-            <p>type c to type c</p>
+<hr>
+        <div id="contact" class="mt-5">
+            <h2>Contact</h2>
+            <div class="d-flex justify-content-center">
+                <a href="mailto:forfofme@gmail.com" class="me-3">
+                    <img src="contact/email.png" alt="Email" width="36" height="28">
+                </a>
+                <a href="https://www.linkedin.com/in/forfof/" class="me-3">
+                    <img src="contact/linkedin.png" alt="LinkedIn" width="30" height="28">
+                </a>
+                <a href="https://www.t.me/forfofme" class="me-3">
+                    <img src="contact/telegram.png" alt="Telegram" width="36" height="34">
+                </a>
+                <a href="https://www.youtube.com/@Forfof">
+                    <img src="contact/yt.png" alt="YouTube" width="36" height="28">
+                </a>
+            </div>
         </div>
     </div>
-    <h2>The BEST Gagets for tech</h2>
-    <div id="items">
-        <div class="amazon-product">
-            <a href="https://amzn.to/3XXenrA" target="_blank">
-                <img src="product_images/ultra_prolink_connector.jpeg" alt="ulta pro link connectors" width="300" height="300">
-            </a>
-            <p>ulta pro link connectors</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3XYFjXM" target="_blank">
-                <img src="product_images/mini_keyboard.jpeg" alt="mini keyboard" width="300" height="300">
-            </a>
-            <p>mini keyboard</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/3O2trQd" target="_blank">
-                <img src="product_images/veriluxhub.jpeg" alt="verilux connector hub" width="300" height="300">
-            </a>
-            <p>verilux connector hub</p>
-        </div>
-        <div class="amazon-product">
-            <a href="https://amzn.to/43wgwLV" target="_blank">
-                <img src="product_images/t&gspeakerbuds.jpeg" alt="speaker and buds" width="300" height="300">
-            </a>
-            <p>speaker and buds</p>
-        </div>
-        
+
+    <div id="disclosure" class="mt-5">
+        <p class="mb-0">This website is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
     </div>
-    </div>
-    <div id="contact" style="margin: 10%;">
-		<h2 style="margin-bottom: 2%;">Contact</h2>
-		<div class="contact-links">
-			<a href="mailto:forfofme@gmail.com">
-				<img src="contact/email.png" alt="Email" width="36" height="28">
-			</a>
-			<a href="https://www.linkedin.com/in/forfof/">
-				<img src="contact/linkedin.png" alt="linkedin" width="30" height="28">
-			</a>
-            <a href="https://www.t.me/forfofme">
-				<img src="contact/telegram.png" alt="telegram" width="36" height="34">
-			</a>
-            <a href="https://www.youtube.com/@Forfof">
-				<img src="contact/yt.png" alt="youtube" width="36" height="28">
-			</a>
-			<!-- Add more contact links with images as desired -->
-		</div>
-	</div>
-    <div id="disclosure">
-        <p>This website is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
-    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-	crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 </html>
