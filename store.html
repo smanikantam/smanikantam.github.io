@@ -53,18 +53,71 @@
             width: 100%;
             z-index: 1000;
         }
-        .card {
-            transition: transform 0.2s;
+        #latest{
+            display: flex;
+            flex-wrap: wrap;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 0) and (max-width: 575px) {
+            body{
+                margin-bottom: 200px;
+            }
+            #yt_vid iframe{
+                width: 250px;
+                height: 150px;
+            }
+            .container .card p{
+                font-size: xx-small;
+            }
+            .container .card img{
+                width: 100%;
+                height: 100px;
+            }
+            .container .card{
+                transition: transform 0.2s;
+                width:150px;
+                height: 150px;
+                overflow: hidden;
+            }
             
         }
-        @media (min-width: 769px) and (max-width: 1079px) {
-            #yt_vid{
-                display: flex;
+        @media (min-width: 576px) and (max-width: 1400px) {
+            #yt_vid iframe{
+                width: 560px;
+                height: 315px;
+            }
+            .container .card img{
+                width: 304px;
+                height: 300px;
+            }
+            .card {
+                transition: transform 0.2s;
+                height: 390px;
+                overflow: hidden;
             }
         }
-        
+        @media (min-width: 1401px) {
+            #yt_vid iframe{
+                width: 560px;
+                height: 315px;
+            }
+            .container .card img{
+                width: 304px;
+                height: 300px;
+            }
+            .card {
+                transition: transform 0.2s;
+                height: 390px;
+                overflow: hidden;
+            }
+        }
+        #yt_vid{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
         #yt_vid .video-container{
             padding: 10px;
         }
@@ -204,10 +257,10 @@
         <h2 class="section-title">The interesting CYBER videos</h2>
         <section id="yt_vid">
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/NoP0lADOrZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/NoP0lADOrZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/NzMsdoYn93I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/NzMsdoYn93I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </section>
         <hr>
