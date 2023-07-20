@@ -56,7 +56,15 @@
         .card {
             transition: transform 0.2s;
         }
-
+        #yt_vid{
+            display: flex;
+        }
+        #yt_vid .video-container{
+            padding: 10px;
+        }
+        #yt_vid .video-container:hover{
+            transform: scale(1.05);
+        }
         .card:hover {
             transform: scale(1.05);
         }
@@ -187,10 +195,13 @@
             </div>
         </section>
         <hr>
-        <section>
-            <h2 class="section-title">The interesting CYBER videos</h2>
+        <h2 class="section-title">The interesting CYBER videos</h2>
+        <section id="yt_vid">
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/NoP0lADOrZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/NzMsdoYn93I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </section>
         <hr>
