@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 100px;
+    margin-top: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#disclosure {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 15px;
+    text-align: center;
+    color: #666666;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#latest{
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (min-width: 0) and (max-width: 575px) {
+    body{
+        margin-bottom: 200px;
+    }
+    #yt_vid iframe{
+        width: 250px;
+        height: 150px;
+    }
+    .container .card p{
+        font-size: xx-small;
+    }
+    .container .card img{
+        width: 100%;
+        height: 100px;
+    }
+    .container .card{
+        transition: transform 0.2s;
+        width:150px;
+        height: 150px;
+        overflow: hidden;
+    }
+    #disclosure{
+        font-style: italic;
+        font-weight: bolder;
+        font-size: xx-small;
+    }
+}
+@media (min-width: 576px) and (max-width: 1400px) {
+    #yt_vid iframe{
+        width: 560px;
+        height: 315px;
+    }
+    .container .card img{
+        width: 304px;
+        height: 300px;
+    }
+    .card {
+        transition: transform 0.2s;
+        height: 390px;
+        overflow: hidden;
+    }
+    #disclosure{
+        font-size:medium;
+    }
+}
+@media (min-width: 1401px) {
+    #yt_vid iframe{
+        width: 560px;
+        height: 315px;
+    }
+    .container .card img{
+        width: 304px;
+        height: 300px;
+    }
+    .card {
+        transition: transform 0.2s;
+        height: 390px;
+        overflow: hidden;
+    }
+    #disclosure{
+        font-size: medium;
+    }
+}
+#yt_vid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#yt_vid .video-container{
+    padding: 10px;
+}
+#yt_vid .video-container:hover{
+    transform: scale(1.05);
+}
+.card:hover {
+    transform: scale(1.05);
+}
+#contact{
+    margin-bottom: 50px;
+}
