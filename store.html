@@ -33,6 +33,9 @@
                         <a class="nav-link" href="#contact">contact</a>
                     </li>
                 </ul>
+                <ul>
+                    <button class="btn btn-outline-primary" style="margin-right: 20%;" onclick="signInWithGoogle()">Sign in with Google</button>
+                </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" id="searchbox" type="search" placeholder="Search"
                         aria-label="Search" autocomplete="off">
@@ -252,6 +255,52 @@
     <div id="disclosure" class="mt-5">
         <p class="mb-0">This website is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
     </div>
+
+
+   <!-- Firebase JavaScript SDK -->
+   <!-- Use older version of Firebase SDK without ES6 modules -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAcXvps8Gg8lQZQb-FhrZCtOc3SzJBLUx4",
+    authDomain: "forfof-me.firebaseapp.com",
+    projectId: "forfof-me",
+    appId: "28921391196",
+    clientId: "28921391196-dodsmouupvtuo94dstaih9qbsoh6dqhp.apps.googleusercontent.com",
+    // Optional: Add scopes if needed
+    scopes: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Function to handle Google sign-in
+  function signInWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        // This will give you the Google access token (if needed)
+        var credential = result.credential;
+        // This will give you the signed-in user information
+        var user = result.user;
+        console.log("User signed in:", user);
+      })
+      .catch((error) => {
+        if (error.code === "auth/popup-closed-by-user") {
+          // User closed the sign-in popup, handle it gracefully
+          console.warn("User closed the sign-in popup.");
+        } else {
+          // Handle other errors
+          console.error("Error signing in:", error);
+        }
+      });
+  }
+</script>
+
+
 
     <script>
         document.getElementById("searchButton").addEventListener("click", function(event) {
