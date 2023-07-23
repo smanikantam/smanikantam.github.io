@@ -265,48 +265,62 @@
     </div>
 
 
+    
+    <!-- fire base web app sdk java script -->
+    <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAcXvps8Gg8lQZQb-FhrZCtOc3SzJBLUx4",
+          authDomain: "forfof-me.firebaseapp.com",
+          projectId: "forfof-me",
+          storageBucket: "forfof-me.appspot.com",
+          messagingSenderId: "28921391196",
+          appId: "1:28921391196:web:8a9cb43665fde948355e99",
+          measurementId: "G-G5P24B117C"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        var db = firebase.firestore();
+        const auth = getAuth(app);
+    
+      </script>
+      <script>
+        function signInWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+        
+            // Sign in with a pop-up window
+            firebase
+              .auth()
+              .signInWithPopup(provider)
+              .then((result) => {
+                // This will give you the Google access token (if needed)
+                const credential = result.credential;
+        
+                // This will give you the signed-in user information
+                const user = result.user;
+                console.log("User signed in:", user);
+              })
+              .catch((error) => {
+                console.error("Error signing in:", error);
+              });
+          }
+      </script>
+
    <!-- Firebase JavaScript SDK -->
    <!-- Use older version of Firebase SDK without ES6 modules -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAcXvps8Gg8lQZQb-FhrZCtOc3SzJBLUx4",
-    authDomain: "forfof-me.firebaseapp.com",
-    projectId: "forfof-me",
-    appId: "28921391196",
-    clientId: "28921391196-dodsmouupvtuo94dstaih9qbsoh6dqhp.apps.googleusercontent.com",
-    // Optional: Add scopes if needed
-    scopes: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
-};
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
 
-  // Function to handle Google sign-in
-  function signInWithGoogle() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        // This will give you the Google access token (if needed)
-        var credential = result.credential;
-        // This will give you the signed-in user information
-        var user = result.user;
-        console.log("User signed in:", user);
-      })
-      .catch((error) => {
-        if (error.code === "auth/popup-closed-by-user") {
-          // User closed the sign-in popup, handle it gracefully
-          console.warn("User closed the sign-in popup.");
-        } else {
-          // Handle other errors
-          console.error("Error signing in:", error);
-        }
-      });
-  }
-</script>
 
 
 
