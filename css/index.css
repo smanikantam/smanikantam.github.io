@@ -14,6 +14,11 @@ a {
 body {
   font-family: "Roboto", sans-serif;
 }
+
+#contact a img:hover{
+  overflow: visible; 
+    white-space: normal;
+}
 /* Media query for mobile */
 @media (max-width: 767px) {
   /* Mobile-specific styles */

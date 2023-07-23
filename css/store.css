@@ -139,6 +139,12 @@ h2 {
 .card:hover {
     transform: scale(1.05);
 }
+#contact .d-flex a img:hover{
+    transform: scale(1.6);
+}
 #contact{
     margin-bottom: 50px;
+}
+#contact .d-flex {
+    align-items: center;
 }
