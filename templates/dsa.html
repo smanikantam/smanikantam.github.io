@@ -46,6 +46,11 @@
             <ol start="3">
                 <li><a href="#TREES">TREES</a>
                     <ul><a href="#insert into tree">insert into tree</a></ul>
+                    <ul><a href="#traversal tree">traversal tree</a></ul>
+                    <ul><a href="#height of the tree">height of the tree</a></ul>
+                    <ul><a href="#depth of the tree">depth of the tree</a></ul>
+                    <ul><a href="#Is Balanced Tree">Is Balanced Tree</a></ul>
+                    <ul><a href="#Is complete binarary tree">Is complete binarary tree</a></ul>
                     
                 </li>
             </ol>
@@ -858,7 +863,7 @@
         </div>
         <pre class="code-content">
             <div class="code-block depth of the tree">
-                //first we should fill the depth numbers to each element then search each elemnt and print its depth
+                //first we should fill the depth numbers to each element then search each element and print its depth
                 void filldepth(Node* root,int d){
                     if(root==nullptr) return;
                     root->depth=d;
@@ -933,6 +938,66 @@
                 }
             </div>
             <div class="code-block Is Balanced Tree" style="display: none;">
+                //write second code here
+            </div>
+        </pre>
+    </div>
+    <h2 class="problem" id="Is complete binarary tree">Is complete binarary tree(full structure)</h2>
+    <div class="code-snippet">
+        <div class="code-header">
+            <span class="file-type">Cpp</span>
+            <div class="tabs">
+                <ul><a href="#" onclick="changeTab(event,0,'Is complete binarary tree')">o(1)</a></ul>
+                <ul><a href="#" onclick="changeTab(event,1,'Is complete binarary tree')">o(2)</a></ul>
+                
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyCode()">
+                    <img src="../logos/copy.png" width="30" height="30" style="border-radius: 5px;" alt="copy">
+                </button>
+            </div>
+        </div>
+        <pre class="code-content">
+            <div class="code-block Is complete binarary tree">
+                //first construct the tree then create a queue in which it will store the sequence of the tree elements
+                Node* insert(Node* root, int x) {
+                    if (root == nullptr) {
+                        return new Node(x);
+                    } else if (x < root->data) {
+                        root->left = insert(root->left, x);
+                    } else {
+                        root->right = insert(root->right, x);
+                    }
+                    return root;
+                }
+                
+                bool isCompleteBinarySearchTree(Node* root) {
+                    if (root == nullptr)
+                        return true;
+                
+                    queue< Node* > q;
+                    q.push(root);
+                    bool isEnd = false;
+                
+                    while (!q.empty()) {
+                        Node* curr = q.front();
+                        q.pop();
+                
+                        if (curr == nullptr) {
+                            isEnd = true;
+                        } else {
+                            if (isEnd)
+                                return false;
+                
+                            q.push(curr->left);
+                            q.push(curr->right);
+                        }
+                    }
+                
+                    return true;
+                }
+            </div>
+            <div class="code-block Is complete binarary tree" style="display: none;">
                 //write second code here
             </div>
         </pre>
