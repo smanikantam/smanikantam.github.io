@@ -31,6 +31,9 @@
 							<a class="nav-link active" aria-current="page" href="#projects">Projects</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" href="#publications">publications</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="store.html">Store</a>
 						</li>
 						<li class="nav-item">
@@ -52,7 +55,7 @@
 		<div>
 			<h2>I am</h2>
 			<p>
-				Sadam Manikantam, a passionate third-year student at Vardhaman College of Engineering. My primary
+				Sadam Manikantam, a passionate forth-year student at Vardhaman College of Engineering. My primary
 				interests lie in exploring cutting-edge technologies, particularly artificial intelligence, machine
 				learning, and deep learning. With the goal of becoming a data scientist and data analyst, I have built
 				several successful machine learning and deep learning models. My curiosity drives me to stay updated
@@ -66,6 +69,7 @@
 		<img src="profilephoto/dp3.jpeg" width="450" height="450" class="img-thumbnail" alt="photo"
 			style="border-radius: 50px;border: none;">
 	</div>
+
 	<div id="projects" style="margin: 10%;">
 		<h2 id="projects">Projects</h2>
 		<div class="row row-cols-1 row-cols-md-3 g-4" style="margin:auto;">
@@ -142,6 +146,11 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="publications" style="margin: 10%;">
+		<h2>publications</h2> <br>
+		<p>IEEE conference paper accepted on Enhanced spam detection model through Re-training and RNN Models. This research focused on its application in developing an efficient and accurate spam notification detector.</p>
+	</div>
 	<!-- <div style="display: flex; align-items: center;margin:10%;">
 		<h2 id="resume" style="margin-right: 10%;">My Resume</h2>
 		<button type="button" class="btn btn-primary">
@@ -177,17 +186,14 @@
 				page.download = "resume.pdf";
 				page.click();
 			} else if (searchTerm === "/dsa") {
-				console.log("/dsa");
 				page.href = "templates/dsa.html";
 				page.click();
-			} else if (searchTerm === "/resume_show") {
-				console.log("/resume show");
+			} else if (searchTerm === "/show_resume") {
 				page.href = "https://drive.google.com/file/d/1p4l-mhyiRKQdACebB8z4kUqo1sWsNiSg/view?usp=sharing";
 				page.click();
 			} else {
 				alert("Invalid search term");
 			}
-			console.log("ex");
 		});
 		
 	</script>
